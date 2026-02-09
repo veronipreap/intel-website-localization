@@ -892,7 +892,7 @@ html[dir="rtl"] .timeline-card p {
   }
 
   .hero .carousel-indicators {
-    right: 0px; /* Closer to edge on mobile */
+    right: -30px; /* Closer to edge on mobile */
     margin-bottom: 0px;
   }
 
