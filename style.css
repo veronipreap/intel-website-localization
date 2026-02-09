@@ -507,6 +507,8 @@ html[dir="rtl"] .learn-more-link .bi-arrow-right {
   width: 100%;
   padding: 0;
   display: block;
+  min-height: 280px;
+  height: 280px;
 }
 
 /* Carousel Indicators (dots) */
