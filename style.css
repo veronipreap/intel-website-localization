@@ -463,7 +463,6 @@ html[dir="rtl"] .learn-more-link .bi-arrow-right {
   border-radius: 4px;
   cursor: pointer;
   transition: background-color 0.3s ease;
-  margin-bottom: 35px;
 }
 
 .hero-button:hover {
@@ -513,7 +512,13 @@ html[dir="rtl"] .learn-more-link .bi-arrow-right {
 
 /* Carousel Indicators (dots) */
 .hero .carousel-indicators {
-  margin-bottom: 20px;
+  margin-bottom: 15px;
+  bottom: 0;
+  right: 20px;
+  left: auto;
+  flex-direction: row;
+  width: auto;
+  justify-content: flex-end;
   z-index: 10;
 }
 
@@ -524,6 +529,7 @@ html[dir="rtl"] .learn-more-link .bi-arrow-right {
   background-color: rgba(255, 255, 255, 0.5);
   border: 2px solid 666666;
   transition: all 0.3s ease;
+  margin: 0 4px;
 }
 
 .hero .carousel-indicators button.active {
@@ -562,6 +568,12 @@ html[dir="rtl"] .hero .carousel-control-prev {
 html[dir="rtl"] .hero .carousel-control-next {
   right: auto;
   left: 0;
+}
+
+/* RTL support for carousel indicators */
+html[dir="rtl"] .hero .carousel-indicators {
+  right: auto;
+  left: 20px;
 }
 
 /* Timeline Section - Main Container */
@@ -877,6 +889,16 @@ html[dir="rtl"] .timeline-card p {
     min-height: 60px;
     padding-top: 10px;
     padding-bottom: 8px;
+  }
+
+  .hero .carousel-indicators {
+    right: 10px; /* Closer to edge on mobile */
+    margin-bottom: 10px;
+  }
+
+  html[dir="rtl"] .hero .carousel-indicators {
+    right: auto;
+    left: 10px; /* RTL: on left side */
   }
 
   .hero-content {
