@@ -875,6 +875,7 @@ html[dir="rtl"] .timeline-card p {
 @media (max-width: 767px) {
   .timeline-scroll-instruction {
     display: block; /* Show instruction on mobile */
+    font-size: 10px;
   }
 
   .timeline-scroll-arrow {
