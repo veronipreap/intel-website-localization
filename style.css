@@ -859,7 +859,7 @@ html[dir="rtl"] .timeline-card p {
     overflow-x: hidden;
     overflow-y: auto;
     scroll-snap-type: y mandatory;
-    max-height: 420px;
+    max-height: 350px;
     direction: ltr; /* keep vertical scroll normal */
     border: 3px solid #0071c5;
     border-radius: 8px;
