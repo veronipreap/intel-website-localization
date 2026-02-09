@@ -471,29 +471,42 @@ html[dir="rtl"] .learn-more-link .bi-arrow-right {
 }
 
 /* Hero Carousel Styling */
-.carousel-fade .carousel-item {
+.hero .carousel-fade .carousel-item {
   opacity: 0;
-  transition: opacity 1.2s cubic-bezier(0.4, 0, 0.2, 1);
+  transition: opacity 1.5s ease-in-out;
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
+  display: block;
 }
 
-.carousel-fade .carousel-item.active {
+.hero .carousel-fade .carousel-item.active,
+.hero .carousel-fade .carousel-item-next.carousel-item-start,
+.hero .carousel-fade .carousel-item-prev.carousel-item-end {
   opacity: 1;
+}
+
+.hero .carousel-fade .carousel-item.active {
   position: relative;
+}
+
+.hero .carousel-fade .active.carousel-item-start,
+.hero .carousel-fade .active.carousel-item-end {
+  opacity: 0;
 }
 
 .carousel-inner {
   position: relative;
   width: 100%;
   overflow: hidden;
+  min-height: 280px;
 }
 
 .carousel-item {
   width: 100%;
   padding: 0;
+  display: block;
 }
 
 /* Carousel Indicators (dots) */
