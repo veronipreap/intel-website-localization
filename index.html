@@ -310,6 +310,29 @@
               <p class="section-subtitle">Subscribe to Intel's sustainability updates</p>
             </div>
 
+            <!-- Newsletter Subscription -->
+            <div class="newsletter-box mb-4">
+              <div class="newsletter-icon">
+                <i class="bi bi-newspaper"></i>
+              </div>
+              <h3 class="newsletter-title">Intel Sustainability Newsletter</h3>
+              <p class="newsletter-text">Stay informed on our environmental progress and industry-leading initiatives</p>
+              <form id="newsletter-form" class="newsletter-form">
+                <div class="newsletter-input-group">
+                  <input 
+                    type="email" 
+                    class="newsletter-input" 
+                    placeholder="your@email.com"
+                    required
+                    aria-label="Email address for newsletter"
+                  />
+                  <button type="submit" class="newsletter-button">
+                    Subscribe <i class="bi bi-arrow-right"></i>
+                  </button>
+                </div>
+              </form>
+            </div>
+
             <form id="sustainability-form" class="contact-form" novalidate>
               <div class="mb-3">
                 <label for="email" class="form-label">
@@ -505,6 +528,37 @@
           form.classList.remove('was-validated');
 
           console.log('Form submitted:', data);
+        });
+      }
+
+      // Newsletter form handling
+      const newsletterForm = document.getElementById('newsletter-form');
+      
+      if (newsletterForm) {
+        newsletterForm.addEventListener('submit', function(e) {
+          e.preventDefault();
+          
+          const emailInput = this.querySelector('.newsletter-input');
+          const email = emailInput.value;
+          
+          if (email) {
+            // Show success animation
+            const button = this.querySelector('.newsletter-button');
+            const originalText = button.innerHTML;
+            button.innerHTML = '<i class="bi bi-check-circle-fill"></i> Subscribed!';
+            button.style.backgroundColor = '#28a745';
+            button.style.color = 'white';
+            
+            // Reset after 3 seconds
+            setTimeout(() => {
+              button.innerHTML = originalText;
+              button.style.backgroundColor = '';
+              button.style.color = '';
+              emailInput.value = '';
+            }, 3000);
+            
+            console.log('Newsletter subscription:', email);
+          }
         });
       }
 
