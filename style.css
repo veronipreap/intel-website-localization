@@ -444,6 +444,11 @@ html[dir="rtl"] .learn-more-link .bi-arrow-right {
   word-spacing: 0.05em;
 }
 
+/* Desktop: Spanish headline is longer, so scale it down */
+html[lang="es"] .hero-headline {
+  font-size: 42px;
+}
+
 .hero-subheading {
   font-size: 21px;
   color: #e0e0e0;
@@ -943,6 +948,11 @@ html[dir="rtl"] .timeline-card p {
     margin: 8px 0;
   }
 
+  /* Spanish hero title is longer, so make it smaller on phones */
+  html[lang="es"] .hero-headline {
+    font-size: 26px;
+  }
+
   .hero-subheading {
     font-size: 16px;
     text-align: center;
@@ -1048,6 +1058,11 @@ html[dir="rtl"] .timeline-card p {
     line-height: 1.1;
   }
 
+  /* Extra small screens: Spanish title needs more room */
+  html[lang="es"] .hero-headline {
+    font-size: 20px;
+  }
+
   .hero-subheading {
     font-size: 12px;
     margin: 5px 0 10px 0;
@@ -1095,6 +1110,7 @@ html[dir="rtl"] .timeline-card p {
   color: #ffffff;
   text-decoration: underline;
 }
+
 
 /* ===== FORCE RTL TIMELINE FLIP (ONLY ON LARGER SCREENS) ===== */
 /* Only apply horizontal layout on screens wider than 920px */
