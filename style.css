@@ -111,6 +111,33 @@ html[dir="rtl"] .skip-to-main {
   color: #666;
   line-height: 1.6;
   font-size: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+/* Learn More Links */
+.learn-more-link {
+  display: inline-block;
+  color: #0071c5;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+  margin-top: auto;
+}
+
+.learn-more-link:hover {
+  color: #005a9e;
+  transform: translateX(5px);
+}
+
+/* RTL support for learn more link arrow */
+html[dir="rtl"] .learn-more-link:hover {
+  transform: translateX(-5px);
+}
+
+html[dir="rtl"] .learn-more-link .bi-arrow-right {
+  transform: rotate(180deg);
+  display: inline-block;
 }
 
 /* Contact Form Section */
