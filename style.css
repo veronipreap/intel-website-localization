@@ -512,9 +512,9 @@ html[dir="rtl"] .learn-more-link .bi-arrow-right {
 
 /* Carousel Indicators (dots) */
 .hero .carousel-indicators {
-  margin-bottom: 15px;
+  margin-bottom: 5px;
   bottom: 0;
-  right: 20px;
+  right: 5px;
   left: auto;
   flex-direction: row;
   width: auto;
@@ -523,13 +523,13 @@ html[dir="rtl"] .learn-more-link .bi-arrow-right {
 }
 
 .hero .carousel-indicators button {
-  width: 12px;
-  height: 12px;
+  width: 8px;
+  height: 8px;
   border-radius: 50%;
   background-color: rgba(255, 255, 255, 0.5);
   border: 2px solid 666666;
   transition: all 0.3s ease;
-  margin: 0 4px;
+  margin: 0 3px;
 }
 
 .hero .carousel-indicators button.active {
@@ -892,8 +892,8 @@ html[dir="rtl"] .timeline-card p {
   }
 
   .hero .carousel-indicators {
-    right: 10px; /* Closer to edge on mobile */
-    margin-bottom: 10px;
+    right: 0px; /* Closer to edge on mobile */
+    margin-bottom: 0px;
   }
 
   html[dir="rtl"] .hero .carousel-indicators {
