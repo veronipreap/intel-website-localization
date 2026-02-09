@@ -20,7 +20,7 @@ html[dir="ltr"] {
   top: -40px;
   left: 0;
   background: #0071c5;
-  color: e0e0e0;
+  color: #ffffff;
   padding: 8px;
   text-decoration: none;
   z-index: 100;
@@ -69,7 +69,7 @@ html[dir="rtl"] .skip-to-main {
 
 .section-subtitle {
   font-size: 1.1rem;
-  color: #666;
+  color: #555555;
   font-weight: 400;
 }
 
@@ -110,7 +110,7 @@ html[dir="rtl"] .skip-to-main {
 }
 
 .feature-text {
-  color: #666;
+  color: #555555;
   line-height: 1.6;
   font-size: 1rem;
   margin-bottom: 1.5rem;
@@ -526,8 +526,8 @@ html[dir="rtl"] .learn-more-link .bi-arrow-right {
   width: 8px;
   height: 8px;
   border-radius: 50%;
-  background-color: rgba(255, 255, 255, 0.5);
-  border: 2px solid 666666;
+  background-color: rgba(255, 255, 255, 0.7);
+  border: 2px solid #999999;
   transition: all 0.3s ease;
   margin: 0 3px;
 }
@@ -589,8 +589,9 @@ html[dir="rtl"] .hero .carousel-indicators {
   flex-wrap: nowrap;
   gap: 20px;
   scroll-behavior: smooth;
-  padding: 10px 10px 0px 10px;
-  max-width: 1135px;
+  padding: 10px 20px 0px 20px;
+  max-width: 100%;
+  width: 100%;
   margin: 0 auto;
   scroll-snap-type: x mandatory;
   overflow-x: auto;
@@ -783,10 +784,12 @@ html[dir="rtl"] .timeline-card p {
     display: block;
   }
 }
-/* Show scroll hint only on large screens when timeline is horizontal */
-@media (min-width: 921px) {
-  .timeline-scroll-hint {
-    display: block;
+
+/* Large screens: Add max-width constraint */
+@media (min-width: 1400px) {
+  .timeline-container {
+    max-width: 1320px;
+    padding: 10px 40px 0px 40px;
   }
 }
 
