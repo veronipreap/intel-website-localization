@@ -127,6 +127,15 @@ html[dir="rtl"] .skip-to-main {
   margin-top: auto;
 }
 
+.learn-more-link.btn {
+  padding: 0;
+  border: 0;
+}
+
+.learn-more-link.btn:focus {
+  box-shadow: none;
+}
+
 .learn-more-link:hover {
   color: #005a9e;
   transform: translateX(5px);
@@ -238,6 +247,10 @@ html[dir="rtl"] .learn-more-link .bi-arrow-right {
   align-items: center;
   gap: 6px;
   letter-spacing: 0.3px;
+}
+
+.newsletter-button.btn {
+  border: none;
 }
 
 .newsletter-button:hover {
