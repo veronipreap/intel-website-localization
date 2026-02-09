@@ -391,6 +391,7 @@ html[dir="rtl"] .learn-more-link .bi-arrow-right {
   min-height: 280px;
   height: auto;
   padding: 20px;
+  margin-bottom: 30px;
 
   position: relative;
   overflow: hidden;
@@ -670,8 +671,20 @@ html[dir="rtl"] .timeline-card p {
 
 .timeline-center-wrapper {
   display: flex;
+  flex-direction: column;
+  align-items: center;
   justify-content: center;
   width: 100%;
+}
+
+.timeline-scroll-instruction {
+  display: none; /* Hidden by default on desktop */
+  text-align: center;
+  color: #0071c5;
+  font-size: 16px;
+  font-weight: 600;
+  margin-bottom: 15px;
+  padding: 0 20px;
 }
 
 .timeline-container::-webkit-scrollbar {
@@ -720,6 +733,10 @@ html[dir="rtl"] .timeline-card p {
 
 /* Tablets - Make timeline vertical */
 @media (min-width: 768px) and (max-width: 920px) {
+  .timeline-scroll-instruction {
+    display: block; /* Show instruction on tablet */
+  }
+
   .timeline-card {
     min-height: 360px;
   }
@@ -734,9 +751,12 @@ html[dir="rtl"] .timeline-card p {
     max-width: 720px;
     overflow-x: hidden;
     overflow-y: auto;
-    max-height: calc(100vh - 200px);
+    max-height: 420px;
     scroll-snap-type: y mandatory;
     direction: ltr; /* keep vertical scroll normal */
+    border: 3px solid #0071c5;
+    border-radius: 8px;
+    padding: 15px;
   }
 
   .timeline-card {
@@ -789,6 +809,10 @@ html[dir="rtl"] .timeline-card p {
 
 /* Phones */
 @media (max-width: 767px) {
+  .timeline-scroll-instruction {
+    display: block; /* Show instruction on mobile */
+  }
+
   .hero::before {
     background-color: rgba(0, 0, 0, 0.65);
   }
@@ -836,8 +860,11 @@ html[dir="rtl"] .timeline-card p {
     overflow-x: hidden;
     overflow-y: auto;
     scroll-snap-type: y mandatory;
-    max-height: calc(100vh - 200px);
+    max-height: 420px;
     direction: ltr; /* keep vertical scroll normal */
+    border: 3px solid #0071c5;
+    border-radius: 8px;
+    padding: 15px;
   }
 
   .timeline-card {
