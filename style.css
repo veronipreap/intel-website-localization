@@ -1,0 +1,401 @@
+/* Hero Section - Header */
+.hero {
+  /* Add gradient overlay first, then background image */
+  background-image: 
+    linear-gradient(to right, 
+      #030214 0%, 
+      transparent 15%, 
+      transparent 85%, 
+      #030214 100%),
+    url('img/hero.png');
+  
+  background-position: center 0px; 
+  background-size: 80%;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-color: #030214;
+
+  min-height: 250px;
+  height: auto;
+  padding: 20px 20px 0px 20px;
+
+  /* Center content using Flexbox */
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+
+  /* Add overlay for text readability */
+  position: relative;
+}
+
+/* Overlay to darken background for better text contrast */
+.hero::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.308);
+  z-index: 1;
+}
+
+/* Hero Content Wrapper */
+.hero-content {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  max-width: 800px;
+}
+
+/* Hero Logo Styling */
+.hero-logo {
+  width: 75px;
+  height: auto;
+  max-width: 100%;
+  display: block;
+  margin: 0 auto 20px auto;
+  object-fit: contain;
+}
+
+/* Hero Headline Styling */
+.hero-headline {
+  font-size: 50px;
+  color: #ffffff;
+  font-weight: bold;
+  font-family: 'Arial', 'Helvetica', sans-serif;
+  margin: 15px 0;
+  line-height: 1.4;
+  word-spacing: 0.05em;
+}
+
+/* Hero Subheading Styling */
+.hero-subheading {
+  font-size: 22px;
+  color: #e0e0e0;
+  font-family: 'Arial', 'Helvetica', sans-serif;
+  margin: 15px 0 30px 0;
+  line-height: 1.8;
+  word-spacing: 0.05em;
+}
+
+/* Call-to-Action Button */
+.hero-button {
+  background-color: #ffffff;
+  color: #0071c5;
+  padding: 12px 30px;
+  font-size: 15px;
+  font-weight: bold;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+/* Button hover effect */
+.hero-button:hover {
+  background-color: #f4f7f8df;
+}
+
+/* Timeline Section - Main Container */
+.timeline-section {
+  padding: 0px 0px;
+  background-color: #f5f5f5;
+}
+
+/* Timeline Container - Holds all cards */
+.timeline-container {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  gap: 20px;
+  scroll-behavior: smooth;
+  padding: 10px 10px 0px 10px;
+  max-width: 1135px;
+  margin: 0 auto;
+  scroll-snap-type: x mandatory;
+}
+
+/* Timeline Card - Individual milestone */
+.timeline-card {
+  flex: 0 0 250px;
+  padding: 10px;
+  background-color: #ffffff;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  position: relative;
+}
+
+/* Card hover effect */
+.timeline-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+}
+
+/* Year heading in the card */
+.timeline-card h2 {
+  color: #0071c5;
+  font-size: 28px;
+  margin: 0 0 10px 0;
+}
+
+/* Card title / milestone name */
+.timeline-card h3 {
+  color: #333333;
+  font-size: 18px;
+  margin: 0 0 15px 0;
+}
+
+/* Card description text */
+.timeline-card p {
+  display: none;
+  position: absolute;
+  top: 12px;
+  left: 10px;
+  right: 10px;
+  background: rgba(0, 0, 0, 0.7);
+  color: #fff;
+  padding: 12px;
+  border-radius: 8px;
+  z-index: 2;
+  font-size: 14px;
+  line-height: 1.6;
+  margin: 0;
+}
+
+/* Show overlay description on hover for desktop */
+.timeline-card:hover p {
+  display: block;
+}
+
+/* Make sure images in timeline cards are responsive */
+.timeline-card img {
+  width: 100%;
+  height: 120px;
+  object-fit: cover;
+  object-position: top;
+  border-radius: 8px;
+  display: block;
+  margin-bottom: 12px;
+}
+
+/* Timeline scroll hint text */
+.timeline-scroll-hint {
+  text-align: center;
+  color: #999999;
+  margin-top: 10px;
+  font-size: 14px;
+}
+
+/* This wrapper centers the timeline horizontally */
+.timeline-center-wrapper {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+.timeline-footer {
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: #f5f5f5;
+  padding: 0px 0 0px 0;
+  z-index: 100;
+  text-align: center;
+  box-shadow: 0 -2px 8px rgba(0, 0, 0, 0.04);
+}
+
+/* Force scrollbar to always be visible (Chrome, Safari, Edge) */
+.timeline-container::-webkit-scrollbar {
+  height: 12px;
+  -webkit-appearance: none;
+}
+
+.timeline-container::-webkit-scrollbar-track {
+  background: #e0e0e0;
+  border-radius: 10px;
+}
+
+.timeline-container::-webkit-scrollbar-thumb {
+  background: #0071c5;
+  border-radius: 10px;
+}
+
+.timeline-container::-webkit-scrollbar-thumb:hover {
+  background: #005a9e;
+}
+
+/* RESPONSIVE DESIGN - For larger screens (tablets and desktops) */
+@media (min-width: 768px) {
+  .timeline-container {
+    overflow-x: scroll;
+    flex-wrap: nowrap;
+    scroll-behavior: smooth;
+  }
+
+  .timeline-section {
+    padding: 40px 0;
+  }
+}
+
+/* Tablets - Make timeline vertical */
+@media (min-width: 768px) and (max-width: 920px) {
+  .timeline-card {
+    /* Make each card taller on iPad Air */
+    min-height: 360px;
+  }
+
+  .timeline-card img {
+    /* Make the image taller to fill more space */
+    height: 170px;
+  }
+
+  .timeline-container {
+    flex-direction: column;
+    align-items: center;
+    max-width: 720px;
+    overflow-x: hidden;
+
+    /* Make the timeline fill the view and scroll vertically */
+    overflow-y: auto;
+    max-height: calc(100vh - 200px);
+
+    /* Enable vertical snap like mobile */
+    scroll-snap-type: y mandatory;
+  }
+
+  .timeline-card {
+    /* Make each card a snap point */
+    scroll-snap-align: start;
+    scroll-snap-stop: always;
+  }
+
+  .timeline-card p {
+    /* Always show the description on iPad Air */
+    display: block;
+    position: static;
+    background: none;
+    color: #666666;
+    padding: 0;
+    border-radius: 0;
+    z-index: auto;
+    margin-top: 0;
+  }
+}
+
+/* Responsive: Adjust hero background size and spacing for smaller screens */
+@media (max-width: 900px) {
+  .hero {
+    background-size: 160%;
+    min-height: 160px;
+    padding-top: 60px;
+  }
+  
+  .hero-headline {
+    font-size: 38px;
+  }
+  
+  .hero-subheading {
+    font-size: 21px;
+  }
+  
+  .hero-button {
+    font-size: 23px;
+    padding: 11px 28px;
+  }
+}
+
+/* Responsive: Adjust hero background size for phones */
+@media (max-width: 600px) {
+  .hero {
+    background-size: 200%;
+    min-height: 120px;
+    padding-top: 28px;
+    padding-bottom: 12px;
+  }
+}
+
+/* RESPONSIVE DESIGN - For phones */
+@media (max-width: 767px) {
+  /* Darken the overlay more on mobile for better text readability */
+  .hero::before {
+    background-color: rgba(0, 0, 0, 0.65);
+  }
+  
+  /* Make hero section shorter on mobile to save space for timeline */
+  .hero {
+    min-height: 60px; /* Reduced from 120px */
+    padding-top: 10px; /* Reduced from 28px */
+    padding-bottom: 8px; /* Reduced from 12px */
+  }
+  
+  .hero-content {
+    padding-left: 5px;
+    padding-right: 5px;
+  }
+  
+  /* Make logo smaller on mobile */
+  .hero-logo {
+    width: 50px; /* Reduced from 75px */
+    margin-bottom: 10px; /* Reduced from 20px */
+  }
+  
+  .hero-headline {
+    font-size: 32px; /* Reduced from 52px */
+    text-align: center;
+    word-wrap: break-word;
+    line-height: 1.2; /* Tighter line height */
+    margin: 8px 0; /* Reduced spacing */
+  }
+  
+  .hero-subheading {
+    font-size: 16px; /* Reduced from 26px */
+    text-align: center;
+    word-wrap: break-word;
+    line-height: 1.4; /* Tighter line height */
+    margin: 8px 0 15px 0; /* Reduced spacing */
+  }
+  
+  .hero-button {
+    font-size: 14px; /* Reduced from 20px */
+    padding: 10px 20px; /* Reduced from 14px 32px */
+  }
+
+  .timeline-container {
+    flex-direction: column;
+    align-items: center;
+    overflow-x: hidden;
+    /* Add vertical scroll snap for mobile */
+    overflow-y: auto;
+    scroll-snap-type: y mandatory;
+    max-height: calc(100vh - 200px); /* Allow scrolling within viewport */
+  }
+
+  .timeline-card {
+    width: 100%;
+    max-width: 350px;
+    margin-bottom: 20px;
+    /* Make each card a snap point */
+    scroll-snap-align: start;
+    scroll-snap-stop: always;
+  }
+
+  /* On phones, always show description below image, not as overlay */
+  .timeline-card p {
+    display: block;
+    position: static;
+    background: none;
+    color: #666666;
+    padding: 0;
+    border-radius: 0;
+    z-index: auto;
+    margin-top: 0;
+  }
+
+  /* Hide the footer on small screens */
+  .timeline-footer {
+    display: none;
+  }
+}
