@@ -469,6 +469,38 @@
         bootstrapCss.href = isRTL ? rtlHref : ltrHref;
       }
 
+      // RTL language detection function
+      function detectAndApplyRTL(langCode) {
+        const rtlLanguages = ['ar', 'he', 'ur', 'fa', 'yi', 'iw', 'ji', 'ps', 'sd'];
+        const isRTL = rtlLanguages.some(lang => langCode.toLowerCase().startsWith(lang));
+        
+        // Only update if direction has actually changed
+        if (document.documentElement.dir !== (isRTL ? 'rtl' : 'ltr')) {
+          document.documentElement.dir = isRTL ? 'rtl' : 'ltr';
+          swapBootstrapCss(isRTL);
+          restartTimelineScroll();
+          console.log('Auto-detected language change:', langCode, 'RTL:', isRTL);
+        }
+      }
+
+      // Watch for language changes (Google Translate, etc.)
+      const htmlObserver = new MutationObserver(function(mutations) {
+        mutations.forEach(function(mutation) {
+          if (mutation.type === 'attributes' && mutation.attributeName === 'lang') {
+            const newLang = document.documentElement.lang;
+            if (newLang) {
+              detectAndApplyRTL(newLang);
+            }
+          }
+        });
+      });
+
+      // Start observing the HTML element for language changes
+      htmlObserver.observe(document.documentElement, {
+        attributes: true,
+        attributeFilter: ['lang']
+      });
+
       langLinks.forEach(link => {
         link.addEventListener('click', function(e) {
           e.preventDefault();
@@ -499,6 +531,12 @@
           console.log('Language selected:', lang, 'Direction:', document.documentElement.dir);
         });
       });
+
+      // Check initial language on page load
+      const initialLang = document.documentElement.lang;
+      if (initialLang) {
+        detectAndApplyRTL(initialLang);
+      }
 
       // Initialize
       startTimelineScroll();
