@@ -216,6 +216,8 @@ html[dir="rtl"] .learn-more-link .bi-arrow-right {
   gap: 8px;
   max-width: 450px;
   margin: 0 auto;
+  width: 100%;
+  flex-wrap: wrap;
 }
 
 .newsletter-input {
@@ -226,6 +228,16 @@ html[dir="rtl"] .learn-more-link .bi-arrow-right {
   font-size: 0.9rem;
   outline: none;
   transition: box-shadow 0.3s ease;
+  /* Allow the input to shrink inside flex so it does not overflow. */
+  min-width: 0;
+  box-sizing: border-box;
+}
+
+/* Override Bootstrap input-group width rule so the input fills the box. */
+.newsletter-input-group.input-group > .newsletter-input {
+  width: 100%;
+  flex: 1 1 auto;
+  align-self: stretch;
 }
 
 .newsletter-input:focus {
@@ -270,6 +282,12 @@ html[dir="rtl"] .learn-more-link .bi-arrow-right {
   
   .newsletter-input-group {
     flex-direction: column;
+    max-width: 100%;
+    width: 100%;
+  }
+
+  .newsletter-input {
+    width: 100%;
   }
   
   .newsletter-button {
