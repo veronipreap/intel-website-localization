@@ -3,6 +3,17 @@ body {
   font-family: 'Inter', 'Segoe UI', 'Helvetica', sans-serif;
 }
 
+/* RTL / LTR Support (works with dir attribute on <html>) */
+html[dir="rtl"] {
+  direction: rtl;
+  unicode-bidi: plaintext; /* better mixed Arabic/English handling */
+}
+
+html[dir="ltr"] {
+  direction: ltr;
+  unicode-bidi: plaintext;
+}
+
 /* Accessibility: Skip to Main Content Link */
 .skip-to-main {
   position: absolute;
@@ -18,6 +29,13 @@ body {
 
 .skip-to-main:focus {
   top: 0;
+}
+
+/* Fix: skip link should be on the right in RTL */
+html[dir="rtl"] .skip-to-main {
+  left: auto;
+  right: 0;
+  border-radius: 0 0 0 5px;
 }
 
 /* Navigation Bar Customization */
@@ -204,18 +222,16 @@ body {
   border-color: #28a745;
 }
 
-
 .hero {
-  /* Add gradient overlay first, then background image */
-  background-image: 
-    linear-gradient(to right, 
-      #030214 0%, 
-      transparent 15%, 
-      transparent 85%, 
+  background-image:
+    linear-gradient(to right,
+      #030214 0%,
+      transparent 15%,
+      transparent 85%,
       #030214 100%),
     url('img/hero.png');
-  
-  background-position: center 0px; 
+
+  background-position: center 0px;
   background-size: 80%;
   background-repeat: no-repeat;
   background-attachment: fixed;
@@ -225,16 +241,13 @@ body {
   height: auto;
   padding: 20px 20px 0px 20px;
 
-  /* Center content using Flexbox */
   display: flex;
   align-items: flex-start;
   justify-content: center;
 
-  /* Add overlay for text readability */
   position: relative;
 }
 
-/* Overlay to darken background for better text contrast */
 .hero::before {
   content: '';
   position: absolute;
@@ -246,7 +259,6 @@ body {
   z-index: 1;
 }
 
-/* Hero Content Wrapper */
 .hero-content {
   position: relative;
   z-index: 2;
@@ -254,7 +266,6 @@ body {
   max-width: 800px;
 }
 
-/* Hero Logo Styling */
 .hero-logo {
   width: 75px;
   height: auto;
@@ -264,7 +275,6 @@ body {
   object-fit: contain;
 }
 
-/* Hero Headline Styling */
 .hero-headline {
   font-size: 50px;
   color: #ffffff;
@@ -275,7 +285,6 @@ body {
   word-spacing: 0.05em;
 }
 
-/* Hero Subheading Styling */
 .hero-subheading {
   font-size: 21px;
   color: #e0e0e0;
@@ -285,7 +294,6 @@ body {
   word-spacing: 0.05em;
 }
 
-/* Call-to-Action Button */
 .hero-button {
   background-color: #ffffff;
   color: #0071c5;
@@ -295,10 +303,9 @@ body {
   border: none;
   border-radius: 5px;
   cursor: pointer;
-  transition: background-color 0.3s e504020ase;
+  transition: background-color 0.3s ease;
 }
 
-/* Button hover effect */
 .hero-button:hover {
   background-color: #f4f7f8df;
 }
@@ -320,6 +327,18 @@ body {
   max-width: 1135px;
   margin: 0 auto;
   scroll-snap-type: x mandatory;
+  overflow-x: auto;
+}
+
+/* Keep card content direction correct */
+html[dir="rtl"] .timeline-card {
+  direction: rtl;
+  text-align: start;
+}
+
+html[dir="ltr"] .timeline-card {
+  direction: ltr;
+  text-align: start;
 }
 
 /* Timeline Card - Individual milestone */
@@ -333,27 +352,23 @@ body {
   position: relative;
 }
 
-/* Card hover effect */
 .timeline-card:hover {
   transform: translateY(-5px);
   box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
 }
 
-/* Year heading in the card */
 .timeline-card h2 {
   color: #0071c5;
   font-size: 28px;
   margin: 0 0 10px 0;
 }
 
-/* Card title / milestone name */
 .timeline-card h3 {
   color: #333333;
   font-size: 18px;
   margin: 0 0 15px 0;
 }
 
-/* Card description text */
 .timeline-card p {
   display: none;
   position: absolute;
@@ -370,12 +385,16 @@ body {
   margin: 0;
 }
 
-/* Show overlay description on hover for desktop */
+/* Fix: hard-coded left overlay position in RTL */
+html[dir="rtl"] .timeline-card p {
+  left: auto;
+  right: 10px;
+}
+
 .timeline-card:hover p {
   display: block;
 }
 
-/* Make sure images in timeline cards are responsive */
 .timeline-card img {
   width: 100%;
   height: 120px;
@@ -386,7 +405,6 @@ body {
   margin-bottom: 12px;
 }
 
-/* Timeline scroll hint text */
 .timeline-scroll-hint {
   text-align: center;
   color: #404040;
@@ -394,7 +412,6 @@ body {
   font-size: 14px;
 }
 
-/* This wrapper centers the timeline horizontally */
 .timeline-center-wrapper {
   display: flex;
   justify-content: center;
@@ -413,7 +430,6 @@ body {
   box-shadow: 0 -2px 8px rgba(0, 0, 0, 0.04);
 }
 
-/* Force scrollbar to always be visible (Chrome, Safari, Edge) */
 .timeline-container::-webkit-scrollbar {
   height: 12px;
   -webkit-appearance: none;
@@ -433,7 +449,7 @@ body {
   background: #005a9e;
 }
 
-/* RESPONSIVE DESIGN - For larger screens (tablets and desktops) */
+/* RESPONSIVE DESIGN - For larger screens */
 @media (min-width: 768px) {
   .timeline-container {
     overflow-x: scroll;
@@ -449,12 +465,10 @@ body {
 /* Tablets - Make timeline vertical */
 @media (min-width: 768px) and (max-width: 920px) {
   .timeline-card {
-    /* Make each card taller on iPad Air */
     min-height: 360px;
   }
 
   .timeline-card img {
-    /* Make the image taller to fill more space */
     height: 170px;
   }
 
@@ -463,23 +477,18 @@ body {
     align-items: center;
     max-width: 720px;
     overflow-x: hidden;
-
-    /* Make the timeline fill the view and scroll vertically */
     overflow-y: auto;
     max-height: calc(100vh - 200px);
-
-    /* Enable vertical snap like mobile */
     scroll-snap-type: y mandatory;
+    direction: ltr; /* keep vertical scroll normal */
   }
 
   .timeline-card {
-    /* Make each card a snap point */
     scroll-snap-align: start;
     scroll-snap-stop: always;
   }
 
   .timeline-card p {
-    /* Always show the description on iPad Air */
     display: block;
     position: static;
     background: none;
@@ -498,22 +507,21 @@ body {
     min-height: 160px;
     padding-top: 60px;
   }
-  
+
   .hero-headline {
     font-size: 38px;
   }
-  
+
   .hero-subheading {
     font-size: 21px;
   }
-  
+
   .hero-button {
     font-size: 23px;
     padding: 11px 28px;
   }
 }
 
-/* Responsive: Adjust hero background size for phones */
 @media (max-width: 600px) {
   .hero {
     background-size: 200%;
@@ -523,72 +531,67 @@ body {
   }
 }
 
-/* RESPONSIVE DESIGN - For phones */
+/* Phones */
 @media (max-width: 767px) {
-  /* Darken the overlay more on mobile for better text readability */
   .hero::before {
     background-color: rgba(0, 0, 0, 0.65);
   }
-  
-  /* Make hero section shorter on mobile to save space for timeline */
+
   .hero {
-    min-height: 60px; /* Reduced from 120px */
-    padding-top: 10px; /* Reduced from 28px */
-    padding-bottom: 8px; /* Reduced from 12px */
+    min-height: 60px;
+    padding-top: 10px;
+    padding-bottom: 8px;
   }
-  
+
   .hero-content {
     padding-left: 5px;
     padding-right: 5px;
   }
-  
-  /* Make logo smaller on mobile */
+
   .hero-logo {
-    width: 50px; /* Reduced from 75px */
-    margin-bottom: 10px; /* Reduced from 20px */
+    width: 50px;
+    margin-bottom: 10px;
   }
-  
+
   .hero-headline {
-    font-size: 32px; /* Reduced from 52px */
+    font-size: 32px;
     text-align: center;
     word-wrap: break-word;
-    line-height: 1.2; /* Tighter line height */
-    margin: 8px 0; /* Reduced spacing */
+    line-height: 1.2;
+    margin: 8px 0;
   }
-  
+
   .hero-subheading {
-    font-size: 16px; /* Reduced from 26px */
+    font-size: 16px;
     text-align: center;
     word-wrap: break-word;
-    line-height: 1.4; /* Tighter line height */
-    margin: 8px 0 15px 0; /* Reduced spacing */
+    line-height: 1.4;
+    margin: 8px 0 15px 0;
   }
-  
+
   .hero-button {
-    font-size: 14px; /* Reduced from 20px */
-    padding: 10px 20px; /* Reduced from 14px 32px */
+    font-size: 14px;
+    padding: 10px 20px;
   }
 
   .timeline-container {
     flex-direction: column;
     align-items: center;
     overflow-x: hidden;
-    /* Add vertical scroll snap for mobile */
     overflow-y: auto;
     scroll-snap-type: y mandatory;
-    max-height: calc(100vh - 200px); /* Allow scrolling within viewport */
+    max-height: calc(100vh - 200px);
+    direction: ltr; /* keep vertical scroll normal */
   }
 
   .timeline-card {
     width: 100%;
     max-width: 350px;
     margin-bottom: 20px;
-    /* Make each card a snap point */
     scroll-snap-align: start;
     scroll-snap-stop: always;
   }
 
-  /* On phones, always show description below image, not as overlay */
   .timeline-card p {
     display: block;
     position: static;
@@ -600,51 +603,48 @@ body {
     margin-top: 0;
   }
 
-  /* Hide the footer on small screens */
   .timeline-footer {
     display: none;
   }
-  
-  /* Responsive Features Section */
+
   .section-title {
     font-size: 1.8rem;
   }
-  
+
   .section-subtitle {
     font-size: 0.95rem;
   }
-  
+
   .feature-card {
     padding: 1.5rem;
     margin-bottom: 1rem;
   }
-  
+
   .feature-icon {
     width: 60px;
     height: 60px;
     font-size: 2rem;
     margin-bottom: 1rem;
   }
-  
+
   .feature-title {
     font-size: 1.25rem;
   }
-  
+
   .feature-text {
     font-size: 0.95rem;
   }
-  
-  /* Responsive Contact Form */
+
   .contact-form {
     padding: 1.5rem;
   }
-  
+
   .btn-primary {
     width: 100% !important;
   }
-  
+
   .form-control {
-    font-size: 16px; /* Prevents zoom on iOS */
+    font-size: 16px;
   }
 }
 
@@ -653,8 +653,20 @@ body {
   .section-title {
     font-size: 2.5rem;
   }
-  
+
   .feature-card {
     padding: 2rem;
   }
+}
+
+/* ===== FORCE RTL TIMELINE FLIP (PUT THIS AT VERY BOTTOM) ===== */
+/* Targets your REAL element by ID so it ALWAYS works */
+html[dir="rtl"] #auto-scroll-timeline {
+  flex-direction: row-reverse !important;
+  direction: rtl !important;
+}
+
+html[dir="ltr"] #auto-scroll-timeline {
+  flex-direction: row !important;
+  direction: ltr !important;
 }
