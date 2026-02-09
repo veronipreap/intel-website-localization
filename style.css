@@ -865,6 +865,26 @@ html[dir="rtl"] .timeline-card p {
   }
 }
 
+/* Mobile navbar: keep the opened menu on the right side */
+@media (max-width: 991.98px) {
+  .navbar-collapse {
+    text-align: right;
+  }
+
+  .navbar-nav {
+    align-items: flex-end;
+  }
+
+  .navbar-nav .nav-link {
+    text-align: right;
+  }
+
+  .navbar .dropdown-menu {
+    left: auto;
+    right: 0;
+  }
+}
+
 @media (max-width: 600px) {
   .hero {
     background-size: 200%;

@@ -38,10 +38,10 @@
       <!-- Navigation Links -->
       <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav ms-auto">
-          <li class="nav-item"><a class="nav-link" href="#main-content">Home</a></li>
-          <li class="nav-item"><a class="nav-link" href="#timeline">Timeline</a></li>
-          <li class="nav-item"><a class="nav-link" href="#features">Sustainability</a></li>
-          <li class="nav-item"><a class="nav-link" href="#contact-form">Contact</a></li>
+          <li class="nav-item"><a class="nav-link" href="#main-content" data-i18n="nav.home">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="#timeline" data-i18n="nav.timeline">Timeline</a></li>
+          <li class="nav-item"><a class="nav-link" href="#features" data-i18n="nav.sustainability">Sustainability</a></li>
+          <li class="nav-item"><a class="nav-link" href="#contact-form" data-i18n="nav.contact">Contact</a></li>
         </ul>
 
         <!-- Language Selector -->
@@ -59,6 +59,8 @@
             <li><a class="dropdown-item" href="#" data-lang="zh" data-label="中文">中文</a></li>
             <li><a class="dropdown-item" href="#" data-lang="ar" data-label="العربية">العربية</a></li>
           </ul>
+          <!-- Google Translate widget lives here (hidden) -->
+          <div id="google_translate_element" class="visually-hidden"></div>
         </div>
       </div>
     </div>
@@ -81,12 +83,12 @@
           <div class="carousel-item active">
             <div class="hero-content">
               
-              <h1 class="hero-headline">Sustainability Through the Ages</h1>
-              <p class="hero-subheading">
+              <h1 class="hero-headline" data-i18n="hero.title1">Sustainability Through the Ages</h1>
+              <p class="hero-subheading" data-i18n="hero.text1">
                 Explore Intel's journey through time, discovering how our commitment
                 to innovation has shaped a more sustainable future for technology and our planet.
               </p>
-              <button type="button" class="hero-button" id="learnMoreBtn">
+              <button type="button" class="hero-button" id="learnMoreBtn" data-i18n="hero.button1">
                 Learn More
               </button>
             </div>
@@ -95,13 +97,13 @@
           <!-- Slide 2 -->
           <div class="carousel-item">
             <div class="hero-content">      
-              <h1 class="hero-headline">Net-Zero by 2040</h1>
-              <p class="hero-subheading">
+              <h1 class="hero-headline" data-i18n="hero.title2">Net-Zero by 2040</h1>
+              <p class="hero-subheading" data-i18n="hero.text2">
                 Intel is committed to achieving net-zero greenhouse gas emissions
                 across global operations by 2040, leading the semiconductor
                 industry towards sustainability.
               </p>
-              <button type="button" class="hero-button" onclick="document.getElementById('features').scrollIntoView({ behavior: 'smooth' })">
+              <button type="button" class="hero-button" onclick="document.getElementById('features').scrollIntoView({ behavior: 'smooth' })" data-i18n="hero.button2">
                 Our Commitment
               </button>
             </div>
@@ -110,13 +112,13 @@
           <!-- Slide 3 -->
           <div class="carousel-item">
             <div class="hero-content">
-              <h1 class="hero-headline">99% Renewable Electricity</h1>
-              <p class="hero-subheading">
+              <h1 class="hero-headline" data-i18n="hero.title3">99% Renewable Electricity</h1>
+              <p class="hero-subheading" data-i18n="hero.text3">
                 In 2023, Intel achieved 99% renewable electricity usage worldwide,
                 reducing carbon emissions and driving progress toward
                 our environmental goals.
               </p>
-              <button type="button" class="hero-button" onclick="document.getElementById('contact-form').scrollIntoView({ behavior: 'smooth' })">
+              <button type="button" class="hero-button" onclick="document.getElementById('contact-form').scrollIntoView({ behavior: 'smooth' })" data-i18n="hero.button3">
                 Get Updates
               </button>
             </div>
@@ -252,8 +254,8 @@
     <section id="features" class="features-section py-5">
       <div class="container">
         <div class="text-center mb-5">
-          <h2 class="section-title">Our Sustainability Pillars</h2>
-          <p class="section-subtitle">Intel's commitment to environmental excellence</p>
+          <h2 class="section-title" data-i18n="features.title">Our Sustainability Pillars</h2>
+          <p class="section-subtitle" data-i18n="features.subtitle">Intel's commitment to environmental excellence</p>
         </div>
 
         <div class="row g-4">
@@ -261,14 +263,14 @@
           <div class="col-md-6 col-lg-4">
             <div class="feature-card text-center h-100">
               <div class="feature-icon"><i class="bi bi-star-fill"></i></div>
-              <h3 class="feature-title">RISE Strategy</h3>
-              <p class="feature-text">
+              <h3 class="feature-title" data-i18n="features.card1.title">RISE Strategy</h3>
+              <p class="feature-text" data-i18n="features.card1.text">
                 Under its RISE (Responsible, Inclusive, Sustainable, Enabling) strategy, 
                 Intel sets ambitious 2030 goals, including driving industry-wide 
                 progress on climate action, water stewardship, and waste reduction.
               </p>
               <!-- Learn More Button -->
-              <a href="#" class="learn-more-link">Learn More <i class="bi bi-arrow-right"></i></a>
+              <a href="#" class="learn-more-link"><span data-i18n="features.learnMore">Learn More</span> <i class="bi bi-arrow-right"></i></a>
             </div>
           </div>
 
@@ -276,15 +278,15 @@
           <div class="col-md-6 col-lg-4">
             <div class="feature-card text-center h-100">
               <div class="feature-icon"><i class="bi bi-hand-thumbs-up-fill"></i></div>
-              <h3 class="feature-title">Commitment</h3>
-              <p class="feature-text">
+              <h3 class="feature-title" data-i18n="features.card2.title">Commitment</h3>
+              <p class="feature-text" data-i18n="features.card2.text">
                 In 2022, Intel pledged to achieve net-zero greenhouse gas emissions 
                 (Scope 1 and 2) by 2040. This commitment builds on decades of 
                 environmental initiatives and partnerships across the semiconductor 
                 industry.
               </p>
               <!-- Learn More Button -->
-              <a href="#" class="learn-more-link">Learn More <i class="bi bi-arrow-right"></i></a>
+              <a href="#" class="learn-more-link"><span data-i18n="features.learnMore">Learn More</span> <i class="bi bi-arrow-right"></i></a>
             </div>
           </div>
 
@@ -292,15 +294,15 @@
           <div class="col-md-6 col-lg-4">
             <div class="feature-card text-center h-100">
               <div class="feature-icon"><i class="bi bi-droplet-fill"></i></div>
-              <h3 class="feature-title">Water &amp; Waste</h3>
-              <p class="feature-text">
+              <h3 class="feature-title" data-i18n="features.card3.title">Water &amp; Waste</h3>
+              <p class="feature-text" data-i18n="features.card3.text">
                 Intel conserves billions of gallons of water annually and 
                 collaborates with local communities to restore watersheds.
                 Intel also upcycles and recycles materials to reduce waste and 
                 advance a circular economy.
               </p>
               <!-- Learn More Button -->
-              <a href="#" class="learn-more-link">Learn More <i class="bi bi-arrow-right"></i></a>
+              <a href="#" class="learn-more-link"><span data-i18n="features.learnMore">Learn More</span> <i class="bi bi-arrow-right"></i></a>
             </div>
           </div>
         </div>
@@ -313,8 +315,8 @@
         <div class="row justify-content-center">
           <div class="col-lg-6">
             <div class="text-center mb-5">
-              <h2 class="section-title">Stay Connected</h2>
-              <p class="section-subtitle">Subscribe to Intel's sustainability updates</p>
+              <h2 class="section-title" data-i18n="contact.title">Stay Connected</h2>
+              <p class="section-subtitle" data-i18n="contact.subtitle">Subscribe to Intel's sustainability updates</p>
             </div>
 
             <!-- Newsletter Subscription -->
@@ -322,8 +324,8 @@
               <div class="newsletter-icon">
                 <i class="bi bi-newspaper"></i>
               </div>
-              <h3 class="newsletter-title">Intel Sustainability Newsletter</h3>
-              <p class="newsletter-text">Stay informed on our environmental progress and industry-leading initiatives</p>
+              <h3 class="newsletter-title" data-i18n="newsletter.title">Intel Sustainability Newsletter</h3>
+              <p class="newsletter-text" data-i18n="newsletter.text">Stay informed on our environmental progress and industry-leading initiatives</p>
               <form id="newsletter-form" class="newsletter-form">
                 <div class="newsletter-input-group">
                   <input 
@@ -334,7 +336,7 @@
                     aria-label="Email address for newsletter"
                   />
                   <button type="submit" class="newsletter-button">
-                    Subscribe <i class="bi bi-arrow-right"></i>
+                    <span data-i18n="newsletter.button">Subscribe</span> <i class="bi bi-arrow-right"></i>
                   </button>
                 </div>
               </form>
@@ -343,7 +345,7 @@
             <form id="sustainability-form" class="contact-form" novalidate>
               <div class="mb-3">
                 <label for="email" class="form-label">
-                  Email Address <span class="required" aria-label="required">*</span>
+                  <span data-i18n="form.emailLabel">Email Address</span> <span class="required" aria-label="required">*</span>
                 </label>
                 <input
                   type="email"
@@ -351,18 +353,19 @@
                   id="email"
                   name="email"
                   placeholder="your@email.com"
+                  data-i18n-placeholder="form.emailPlaceholder"
                   required
                   aria-required="true"
                   aria-describedby="email-help"
                 />
                 <small id="email-help" class="form-text text-muted">
-                  We'll never share your email with anyone else.
+                  <span data-i18n="form.emailHelp">We'll never share your email with anyone else.</span>
                 </small>
               </div>
 
               <div class="mb-3">
                 <label for="fullname" class="form-label">
-                  Full Name <span class="required" aria-label="required">*</span>
+                  <span data-i18n="form.nameLabel">Full Name</span> <span class="required" aria-label="required">*</span>
                 </label>
                 <input
                   type="text"
@@ -370,34 +373,36 @@
                   id="fullname"
                   name="fullname"
                   placeholder="John Doe"
+                  data-i18n-placeholder="form.namePlaceholder"
                   required
                   aria-required="true"
                 />
               </div>
 
               <div class="mb-3">
-                <label class="form-label">I'm interested in:</label>
+                <label class="form-label" data-i18n="form.interestLabel">I'm interested in:</label>
 
                 <div class="form-check">
                   <input class="form-check-input" type="checkbox" id="news" name="preferences" value="news" />
-                  <label class="form-check-label" for="news">Company News & Updates</label>
+                  <label class="form-check-label" for="news" data-i18n="form.interestNews">Company News & Updates</label>
                 </div>
 
                 <div class="form-check">
                   <input class="form-check-input" type="checkbox" id="sustainability" name="preferences" value="sustainability" />
-                  <label class="form-check-label" for="sustainability">Sustainability Initiatives</label>
+                  <label class="form-check-label" for="sustainability" data-i18n="form.interestSustainability">Sustainability Initiatives</label>
                 </div>
 
                 <div class="form-check">
                   <input class="form-check-input" type="checkbox" id="research" name="preferences" value="research" />
-                  <label class="form-check-label" for="research">Research & Innovation</label>
+                  <label class="form-check-label" for="research" data-i18n="form.interestResearch">Research & Innovation</label>
                 </div>
               </div>
 
               <div class="mb-3">
-                <label for="message" class="form-label">Your Message</label>
+                <label for="message" class="form-label" data-i18n="form.messageLabel">Your Message</label>
                 <textarea class="form-control" id="message" name="message" rows="4"
-                          placeholder="Share your thoughts or questions..."></textarea>
+                          placeholder="Share your thoughts or questions..."
+                          data-i18n-placeholder="form.messagePlaceholder"></textarea>
               </div>
 
               <button type="submit" class="btn btn-primary btn-lg w-100">
@@ -422,8 +427,8 @@
         <div class="col-md-6">
           <nav class="footer-nav">
             <ul class="list-inline mb-0 text-md-end">
-              <li class="list-inline-item"><a href="#" class="footer-link">Privacy Policy</a></li>
-              <li class="list-inline-item"><a href="#" class="footer-link">Terms of Use</a></li>
+              <li class="list-inline-item"><a href="#" class="footer-link" data-i18n="footer.privacy">Privacy Policy</a></li>
+              <li class="list-inline-item"><a href="#" class="footer-link" data-i18n="footer.terms">Terms of Use</a></li>
               
             </ul>
           </nav>
@@ -591,6 +596,34 @@
       const currentLangLabel = document.getElementById('currentLangLabel');
       const bootstrapCss = document.getElementById('bootstrapCss');
 
+      // Google Translate setup (auto-translate page content)
+      function googleTranslateElementInit() {
+        new google.translate.TranslateElement(
+          {
+            pageLanguage: 'en',
+            includedLanguages: 'en,es,fr,de,zh-CN,ar',
+            autoDisplay: false
+          },
+          'google_translate_element'
+        );
+      }
+
+      function setGoogleTranslate(lang) {
+        const googleLangMap = {
+          zh: 'zh-CN'
+        };
+        const targetLang = googleLangMap[lang] || lang;
+
+        const combo = document.querySelector('.goog-te-combo');
+        if (!combo) {
+          setTimeout(() => setGoogleTranslate(lang), 300);
+          return;
+        }
+
+        combo.value = targetLang;
+        combo.dispatchEvent(new Event('change'));
+      }
+
       function swapBootstrapCss(isRTL) {
         const rtlHref = "https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.rtl.min.css";
         const ltrHref = "https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css";
@@ -653,6 +686,9 @@
           // Swap Bootstrap CSS so utilities actually flip
           swapBootstrapCss(isRTL);
 
+          // Ask Google Translate to switch language
+          setGoogleTranslate(lang);
+
           // Restart timeline
           restartTimelineScroll();
 
@@ -664,11 +700,15 @@
       const initialLang = document.documentElement.lang;
       if (initialLang) {
         detectAndApplyRTL(initialLang);
+        setGoogleTranslate(initialLang);
       }
 
       // Initialize
       startTimelineScroll();
     });
   </script>
+
+  <!-- Google Translate loader (calls googleTranslateElementInit) -->
+  <script src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
 </body>
 </html>
