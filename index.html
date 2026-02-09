@@ -238,6 +238,10 @@
               next-generation sustainable semiconductor manufacturing.
             </p>
           </div>
+          <!-- Vertical Scroll Arrow Indicator -->
+          <div class="timeline-scroll-arrow">
+            <i class="bi bi-chevron-down"></i>
+          </div>
         </div>
       </div>
       <!-- Timeline Scroll Hint (Desktop Only) -->
@@ -495,6 +499,26 @@
         learnMoreBtn.addEventListener('click', () => {
           document.getElementById('timeline')?.scrollIntoView({ behavior: 'smooth' });
         });
+      }
+
+      // Timeline scroll arrow click handler
+      const scrollArrow = document.querySelector('.timeline-scroll-arrow');
+      const timelineContainer = document.getElementById('auto-scroll-timeline');
+      if (scrollArrow && timelineContainer) {
+        scrollArrow.addEventListener('click', () => {
+          // Scroll down by one card height
+          timelineContainer.scrollBy({
+            top: 380,
+            behavior: 'smooth'
+          });
+        });
+
+        // Hide arrow when user starts scrolling
+        timelineContainer.addEventListener('scroll', () => {
+          if (timelineContainer.scrollTop > 20) {
+            scrollArrow.style.display = 'none';
+          }
+        }, { passive: true });
       }
 
       // Form handling

@@ -686,6 +686,54 @@ html[dir="rtl"] .timeline-card p {
   padding: 0 20px;
 }
 
+/* Vertical Timeline Scroll Arrow */
+.timeline-scroll-arrow {
+  display: none; /* Hidden by default on desktop */
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  font-size: 32px;
+  color: #0071c5;
+  background: rgba(255, 255, 255, 0.95);
+  border-radius: 50%;
+  width: 60px;
+  height: 60px;
+  line-height: 60px;
+  padding: 0;
+  box-shadow: 0 4px 12px rgba(0, 113, 197, 0.3);
+  animation: bounce 2s infinite;
+  cursor: pointer;
+  transition: color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
+  z-index: 10;
+  pointer-events: auto;
+}
+
+.timeline-scroll-arrow:hover {
+  color: #005a9e;
+  transform: translate(-50%, calc(-50% + 3px));
+  box-shadow: 0 6px 16px rgba(0, 90, 158, 0.4);
+  animation: none; /* Stop bouncing on hover */
+}
+
+.timeline-scroll-arrow:active {
+  transform: translate(-50%, calc(-50% + 5px));
+}
+
+/* Bounce animation for scroll arrow */
+@keyframes bounce {
+  0%, 20%, 50%, 80%, 100% {
+    transform: translate(-50%, -50%);
+  }
+  40% {
+    transform: translate(-50%, calc(-50% - 10px));
+  }
+  60% {
+    transform: translate(-50%, calc(-50% - 5px));
+  }
+}
+
 .timeline-container::-webkit-scrollbar {
   height: 12px;
   -webkit-appearance: none;
@@ -736,6 +784,10 @@ html[dir="rtl"] .timeline-card p {
     display: block; /* Show instruction on tablet */
   }
 
+  .timeline-scroll-arrow {
+    display: block; /* Show arrow on tablet */
+  }
+
   .timeline-card {
     min-height: 360px;
   }
@@ -756,6 +808,7 @@ html[dir="rtl"] .timeline-card p {
     border: 3px solid #0071c5;
     border-radius: 8px;
     padding: 15px;
+    position: relative; /* For arrow positioning */
   }
 
   .timeline-card {
@@ -812,6 +865,10 @@ html[dir="rtl"] .timeline-card p {
     display: block; /* Show instruction on mobile */
   }
 
+  .timeline-scroll-arrow {
+    display: block; /* Show arrow on mobile */
+  }
+
   .hero::before {
     background-color: rgba(0, 0, 0, 0.65);
   }
@@ -864,6 +921,7 @@ html[dir="rtl"] .timeline-card p {
     border: 3px solid #0071c5;
     border-radius: 8px;
     padding: 15px;
+    position: relative; /* For arrow positioning */
   }
 
   .timeline-card {
