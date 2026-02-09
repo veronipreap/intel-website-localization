@@ -659,14 +659,16 @@ html[dir="rtl"] .timeline-card p {
   }
 }
 
-/* ===== FORCE RTL TIMELINE FLIP (PUT THIS AT VERY BOTTOM) ===== */
-/* Targets your REAL element by ID so it ALWAYS works */
-html[dir="rtl"] #auto-scroll-timeline {
-  flex-direction: row-reverse !important;
-  direction: rtl !important;
-}
+/* ===== FORCE RTL TIMELINE FLIP (ONLY ON LARGER SCREENS) ===== */
+/* Only apply horizontal layout on screens wider than 920px */
+@media (min-width: 921px) {
+  html[dir="rtl"] #auto-scroll-timeline {
+    flex-direction: row-reverse !important;
+    direction: rtl !important;
+  }
 
-html[dir="ltr"] #auto-scroll-timeline {
-  flex-direction: row !important;
-  direction: ltr !important;
+  html[dir="ltr"] #auto-scroll-timeline {
+    flex-direction: row !important;
+    direction: ltr !important;
+  }
 }
