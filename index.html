@@ -64,21 +64,71 @@
   </nav>
 
   <main id="main-content">
-    <!-- Header / Hero Section -->
+    <!-- Hero Carousel Section -->
     <header class="hero">
-      <div class="hero-content">
-        <img src="img/intel-header-logo.svg" alt="Intel Logo" class="hero-logo" />
+      <div id="heroCarousel" class="carousel slide carousel-fade" data-bs-ride="carousel" data-bs-interval="6000">
+        <!-- Carousel Indicators -->
+        <div class="carousel-indicators">
+          <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+          <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
+          <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
+        </div>
 
-        <h1 class="hero-headline">Sustainability Through the Ages</h1>
+        <!-- Carousel Slides -->
+        <div class="carousel-inner">
+          <!-- Slide 1 -->
+          <div class="carousel-item active">
+            <div class="hero-content">
+              
+              <h1 class="hero-headline">Sustainability Through the Ages</h1>
+              <p class="hero-subheading">
+                Explore Intel's journey through time, discovering how our commitment
+                to innovation has shaped a more sustainable future for technology and our planet.
+              </p>
+              <button type="button" class="hero-button" id="learnMoreBtn">
+                Learn More
+              </button>
+            </div>
+          </div>
 
-        <p class="hero-subheading">
-          Explore Intel's journey through time, discovering how our commitment
-          to innovation has shaped a more sustainable future for technology
-          and our planet.
-        </p>
+          <!-- Slide 2 -->
+          <div class="carousel-item">
+            <div class="hero-content">      
+              <h1 class="hero-headline">Net-Zero by 2040</h1>
+              <p class="hero-subheading">
+                Intel is committed to achieving net-zero greenhouse gas emissions
+                across global operations by 2040, leading the semiconductor
+                industry towards sustainability.
+              </p>
+              <button type="button" class="hero-button" onclick="document.getElementById('features').scrollIntoView({ behavior: 'smooth' })">
+                Our Commitment
+              </button>
+            </div>
+          </div>
 
-        <button type="button" class="hero-button" id="learnMoreBtn" style="margin-bottom: 10px;">
-          Learn More
+          <!-- Slide 3 -->
+          <div class="carousel-item">
+            <div class="hero-content">
+              <h1 class="hero-headline">99% Renewable Electricity</h1>
+              <p class="hero-subheading">
+                In 2023, Intel achieved 99% renewable electricity usage worldwide,
+                drastically reducing carbon emissions.
+              </p>
+              <button type="button" class="hero-button" onclick="document.getElementById('contact-form').scrollIntoView({ behavior: 'smooth' })">
+                Get Updates
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Carousel Controls -->
+        <button class="carousel-control-prev" type="button" data-bs-target="#heroCarousel" data-bs-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#heroCarousel" data-bs-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Next</span>
         </button>
       </div>
     </header>

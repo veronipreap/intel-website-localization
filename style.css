@@ -261,20 +261,17 @@ html[dir="rtl"] .learn-more-link .bi-arrow-right {
     url('img/hero.png');
 
   background-position: center 0px;
-  background-size: 100%;
+  background-size: 120%;
   background-repeat: no-repeat;
   background-attachment: fixed;
   background-color: #030214;
 
-  min-height: 100px;
+  min-height: 280px;
   height: auto;
-  padding: 20px 20px 0px 20px;
-
-  display: flex;
-  align-items: flex-start;
-  justify-content: center;
+  padding: 20px;
 
   position: relative;
+  overflow: hidden;
 }
 
 .hero::before {
@@ -288,11 +285,22 @@ html[dir="rtl"] .learn-more-link .bi-arrow-right {
   z-index: 1;
 }
 
+#heroCarousel {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  height: 100%;
+  min-height: 280px;
+}
+
 .hero-content {
   position: relative;
   z-index: 2;
   text-align: center;
   max-width: 800px;
+  margin: 0 auto;
+  padding: 10px 20px;
+}
 }
 
 .hero-logo {
@@ -318,7 +326,7 @@ html[dir="rtl"] .learn-more-link .bi-arrow-right {
   font-size: 21px;
   color: #e0e0e0;
   font-family: 'Clear Sans', 'Segoe UI', 'Helvetica', sans-serif;
-  margin: 15px 0 30px 0;
+  margin: 10px 0 15px 0;
   line-height: 1.8;
   word-spacing: 0.05em;
 }
@@ -326,17 +334,96 @@ html[dir="rtl"] .learn-more-link .bi-arrow-right {
 .hero-button {
   background-color: #ffffff;
   color: #0071c5;
-  padding: 12px 30px;
-  font-size: 15px;
+  padding: 6px 16px;
+  font-size: 12px;
   font-weight: bold;
   border: none;
-  border-radius: 5px;
+  border-radius: 4px;
   cursor: pointer;
   transition: background-color 0.3s ease;
 }
 
 .hero-button:hover {
   background-color: #f4f7f8df;
+}
+
+/* Hero Carousel Styling */
+.carousel-fade .carousel-item {
+  opacity: 0;
+  transition: opacity 1.2s cubic-bezier(0.4, 0, 0.2, 1);
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+}
+
+.carousel-fade .carousel-item.active {
+  opacity: 1;
+  position: relative;
+}
+
+.carousel-inner {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+}
+
+.carousel-item {
+  width: 100%;
+  padding: 0;
+}
+
+/* Carousel Indicators (dots) */
+.hero .carousel-indicators {
+  margin-bottom: 15px;
+  z-index: 3;
+}
+
+.hero .carousel-indicators button {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background-color: rgba(255, 255, 255, 0.5);
+  border: 2px solid rgba(255, 255, 255, 0.8);
+  transition: all 0.3s ease;
+}
+
+.hero .carousel-indicators button.active {
+  background-color: #ffffff;
+  transform: scale(1.2);
+}
+
+/* Carousel Controls (arrows) */
+.hero .carousel-control-prev,
+.hero .carousel-control-next {
+  width: 50px;
+  opacity: 0.7;
+  transition: opacity 0.3s ease;
+  z-index: 3;
+}
+
+.hero .carousel-control-prev:hover,
+.hero .carousel-control-next:hover {
+  opacity: 1;
+}
+
+.hero .carousel-control-prev-icon,
+.hero .carousel-control-next-icon {
+  width: 30px;
+  height: 30px;
+  background-size: 100%;
+  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.5));
+}
+
+/* RTL support for carousel controls */
+html[dir="rtl"] .hero .carousel-control-prev {
+  left: auto;
+  right: 0;
+}
+
+html[dir="rtl"] .hero .carousel-control-next {
+  right: auto;
+  left: 0;
 }
 
 /* Timeline Section - Main Container */
