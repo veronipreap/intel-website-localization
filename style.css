@@ -41,6 +41,8 @@ html[dir="rtl"] .skip-to-main {
 /* Navigation Bar Customization */
 .navbar {
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  padding-top: 0.2rem;
+  padding-bottom: 0.2rem;
 }
 
 .navbar-brand img {
