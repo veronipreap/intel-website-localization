@@ -20,7 +20,7 @@ html[dir="ltr"] {
   top: -40px;
   left: 0;
   background: #0071c5;
-  color: white;
+  color: e0e0e0;
   padding: 8px;
   text-decoration: none;
   z-index: 100;
@@ -391,7 +391,6 @@ html[dir="rtl"] .learn-more-link .bi-arrow-right {
   min-height: 280px;
   height: auto;
   padding: 20px;
-  margin-bottom: 30px;
 
   position: relative;
   overflow: hidden;
@@ -567,7 +566,7 @@ html[dir="rtl"] .hero .carousel-control-next {
 
 /* Timeline Section - Main Container */
 .timeline-section {
-  padding: 0px 0px;
+  padding: 30px 0px 0px 0px;
   background-color: #f5f5f5;
 }
 
