@@ -693,7 +693,7 @@ html[dir="rtl"] .timeline-card p {
   display: none; /* Hidden by default on desktop */
   text-align: center;
   color: #0071c5;
-  font-size: 16px;
+  font-size: 20px;
   font-weight: 600;
   margin-bottom: 15px;
   padding: 0 20px;
@@ -898,7 +898,7 @@ html[dir="rtl"] .timeline-card p {
 @media (max-width: 767px) {
   .timeline-scroll-instruction {
     display: block; /* Show instruction on mobile */
-    font-size: 10px;
+    font-size: 14px;
   }
 
   .timeline-scroll-arrow {
